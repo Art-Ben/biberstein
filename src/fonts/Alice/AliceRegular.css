@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'AliceRegular';
+    src: url('fonts/AliceRegular.eot');
+    src: url('fonts/AliceRegular.eot') format('embedded-opentype'),
+         url('fonts/AliceRegular.woff2') format('woff2'),
+         url('fonts/AliceRegular.woff') format('woff'),
+         url('fonts/AliceRegular.ttf') format('truetype'),
+         url('fonts/AliceRegular.svg#AliceRegular') format('svg');
+}

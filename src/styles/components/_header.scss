@@ -1,0 +1,180 @@
+.header {
+  width: 100%;
+  @extend .flex;
+  @extend .flex-wrap;
+  @extend .flex-v-center;
+  @extend .flex-h-center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 50px 130px;
+  z-index: 99;
+  background: transparent;
+  min-height: 150px;
+  transition: all .6s;
+
+  &__logo {
+    position: absolute;
+    left: 130px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 190px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-width: 140px;
+      left: 25px;
+    }
+  }
+
+  &__left, &__right {
+    width: 50%;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-center;
+
+    @media screen and (max-width: 768px) {
+      width: auto;
+    }
+  }
+
+  &__left {
+    @extend .flex-h-end;
+  }
+
+  &__right {
+    @extend .flex-h-start;
+  }
+
+  &__nav {
+    width: auto;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-center;
+    @extend .flex-h-start;
+
+    &--link {
+      width: auto;
+      @extend .flex;
+      @extend .flex-wrap;
+      @extend .flex-v-center;
+      @extend .flex-h-center;
+      @include font( 'WorkSans', 20px, $COLOR_BLUE, 600, 30px);
+      padding: 15px 25px;
+      background: $COLOR_WHITE;
+      text-decoration: none;
+      transition: all .6s;
+
+      &:visited {
+        color: $COLOR_BLUE;
+      }
+
+      &:hover {
+        background: transparentize( $COLOR_WHITE, .5 );
+        color: transparentize( $COLOR_BLUE, .5 );
+      }
+
+      &.current {
+        background: transparentize( $COLOR_WHITE, .5 );
+        color: transparentize( $COLOR_BLUE, .5 );
+      }
+
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .mobileBurger {
+      width: 50px;
+      height: 50px;
+      display: none;
+      @extend .flex-wrap;
+      @extend .flex-v-center;
+      @extend .flex-h-center;
+      background-repeat: no-repeat;
+      background-size: 15px 20px;
+      background-image: url('../dist/images/menu.svg');
+      background-color: $COLOR_WHITE;
+      background-position: center;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      @media screen and (max-width: 1024px) {
+        display: flex;
+      }
+    }
+  }
+
+  .search {
+    width: auto;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-center;
+    @extend .flex-h-center;
+    @include font( 'WorkSans', 20px, $COLOR_WHITE, 600, 30px);
+    padding: 15px 25px;
+    background: $COLOR_BLUE;
+    text-decoration: none;
+    transition: all .6s;
+
+    &:visited {
+      color: $COLOR_WHITE;
+    }
+
+    &:hover {
+      background: transparentize( $COLOR_BLUE, .5 );
+      color: transparentize( $COLOR_WHITE, .5 );
+    }
+
+    .desktop-txt {
+      display: none;
+    }
+
+    .hidden-icon {
+      display: none;
+      width: 50px;
+      height: 50px;
+      background-color: $COLOR_BLUE;
+      background-image: url('../dist/images/search.svg');
+      background-size: 15px 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+
+    @media screen and (max-width: 1024px) {
+      padding: 0;
+      background:transparent;
+
+      .hidden-icon {
+        display: block;
+      }
+    }
+  }
+
+  &.fixed {
+    background: $COLOR_WHITE;
+    min-height: unset;
+    padding: 35px 130px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 50px 130px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 25px;
+    justify-content: flex-end;
+
+    &.fixed {
+      padding: 25px;
+    }
+  }
+}

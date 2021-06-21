@@ -1,0 +1,124 @@
+.footer {
+  width: 100%;
+  @extend .flex;
+  @extend .flex-wrap;
+  @extend .flex-v-start;
+  @extend .flex-h-center;
+  position: relative;
+  padding: 65px 130px;
+  background: $COLOR_WHITE;
+
+  &__cont {
+    width: 100%;
+    max-width: 1070px;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-center;
+    @extend .flex-h-between;
+  }
+
+  &__logo {
+    width: auto;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-start;
+    @extend .flex-h-start;
+    @extend .flex-direction-column;
+    text-decoration: none;
+
+    .lnk {
+      width: auto;
+      @extend .flex;
+      @extend .flex-wrap;
+      @extend .flex-v-center;
+      @extend .flex-h-start;
+    }
+
+    img {
+      max-width: 300px;
+
+      @media screen and (max-width: 560px) {
+        max-width: 180px;
+      }
+    }
+
+    .addr {
+      display: block;
+      width: auto;
+      margin-top: 40px;
+      @include font( 'WorkSans', 24px, $COLOR_BLUE, 400, 30px);
+
+      @media screen and (max-width: 560px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      align-items: center;
+
+      .addr {
+        width: 100%;
+        text-align: center;
+      }
+
+      .lnk {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__links {
+    width: auto;
+    @extend .flex;
+    @extend .flex-wrap;
+    @extend .flex-v-center;
+    @extend .flex-h-start;
+
+    .link {
+      width: auto;
+      display: block;
+      text-decoration: none;
+      @include font( 'WorkSans', 24px, $COLOR_BLUE, 600, 30px);
+      transition: all .6s;
+      margin-right: 100px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+
+      &:visited {
+        color: $COLOR_BLUE;
+      }
+
+      @media screen and (max-width: 560px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 100%;
+      flex-direction: column;
+      margin-top: 30px;
+
+      .link {
+        margin-bottom: 30px;
+        margin-right: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 60px 15px;
+  }
+}
